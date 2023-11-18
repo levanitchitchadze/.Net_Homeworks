@@ -22,7 +22,7 @@ namespace Mid_Term_Nov_18_23
 
             dataGridView.DataSource = ContactClass.Select();
 
-            CountOfRecordsLabel.Text = Convert.ToString( ContactClass.Procedure());
+            CountOfRecordsLabel.Text = Convert.ToString( contactClass.Procedure());
         }
 
 
@@ -32,7 +32,7 @@ namespace Mid_Term_Nov_18_23
 
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
+        private  void AddButton_Click(object sender, EventArgs e)
         {
             ContactClass.FirstName=FirstNameTextBox.Text;
             ContactClass.LastName=LastNameTextBox.Text;
@@ -48,7 +48,7 @@ namespace Mid_Term_Nov_18_23
                 MessageBox.Show("New Contact Successfuly Inserted");
                 clear();
                 dataGridView.DataSource = ContactClass.Select();
-                CountOfRecordsLabel.Text = Convert.ToString(ContactClass.Procedure());
+                CountOfRecordsLabel.Text = Convert.ToString(contactClass.Procedure());
 
 
             }
@@ -73,14 +73,18 @@ namespace Mid_Term_Nov_18_23
         }
 
 
-        public void clear()
+        public async void clear()
         {
-            FirstNameTextBox.Text = "";
-            LastNameTextBox.Text = "";
-            ContactNoTextBox.Text = "";
-            AddressTextBox.Text = "";
-            GenderComboBox.Text = "";
-            ContactIdTextBox.Text = "";
+
+            await Task.Run(() =>
+            {
+                FirstNameTextBox.Text = "";
+                LastNameTextBox.Text = "";
+                ContactNoTextBox.Text = "";
+                AddressTextBox.Text = "";
+                GenderComboBox.Text = "";
+                ContactIdTextBox.Text = "";
+            });
         }
 
         private void dataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

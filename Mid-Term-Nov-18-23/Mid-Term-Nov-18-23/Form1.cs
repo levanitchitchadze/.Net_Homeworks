@@ -73,18 +73,17 @@ namespace Mid_Term_Nov_18_23
         }
 
 
-        public async void clear()
+        public  void clear()
         {
 
-            await Task.Run(() =>
-            {
+            
                 FirstNameTextBox.Text = "";
                 LastNameTextBox.Text = "";
                 ContactNoTextBox.Text = "";
                 AddressTextBox.Text = "";
                 GenderComboBox.Text = "";
                 ContactIdTextBox.Text = "";
-            });
+            
         }
 
         private void dataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

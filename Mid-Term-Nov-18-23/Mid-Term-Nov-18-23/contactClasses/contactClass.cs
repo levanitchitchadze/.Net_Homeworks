@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace Mid_Term_Nov_18_23.contactClasses
 {
@@ -175,5 +176,73 @@ namespace Mid_Term_Nov_18_23.contactClasses
             return isSuccess;
 
         }
+
+
+        public int Procedure ()
+        {
+
+            SqlConnection con = new SqlConnection(myconnstring);
+
+            try
+            {
+
+                string sql = "exec CountOfRecords";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+
+                
+
+
+                con.Open();
+                int rows = Convert.ToInt32(cmd.ExecuteScalar());
+                return rows;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+             
+        }
+
+        public DataTable SelectForSearch(string  ContactId) 
+        {
+            SqlConnection con = new SqlConnection(myconnstring);
+            DataTable dt = new DataTable();
+            try
+            {
+
+                string sql = "select *from tbl_Contact where contactID like '%"+ ContactId + "%'";
+
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+    
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                con.Open();
+                adapter.Fill(dt);
+
+
+
+                return dt;
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
     }
 }

@@ -20,16 +20,12 @@ namespace Mid_Term_Nov_18_23
         {
             InitializeComponent();
 
-
-
-
-
-
-
             dataGridView.DataSource = ContactClass.Select();
 
-
+            CountOfRecordsLabel.Text = Convert.ToString( ContactClass.Procedure());
         }
+
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -52,6 +48,8 @@ namespace Mid_Term_Nov_18_23
                 MessageBox.Show("New Contact Successfuly Inserted");
                 clear();
                 dataGridView.DataSource = ContactClass.Select();
+                CountOfRecordsLabel.Text = Convert.ToString(ContactClass.Procedure());
+
 
             }
             else
@@ -136,6 +134,7 @@ namespace Mid_Term_Nov_18_23
                 clear();
                 dataGridView.DataSource = ContactClass.Select();
 
+                CountOfRecordsLabel.Text = Convert.ToString(ContactClass.Procedure());
 
             }
             else
@@ -143,6 +142,19 @@ namespace Mid_Term_Nov_18_23
                 MessageBox.Show("Failed to delete Contact. Try Again");
 
             }
+
+        }
+
+        
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string SerachText = SearchTextBox.Text;
+
+            
+
+            dataGridView.DataSource = ContactClass.SelectForSearch(SerachText);
+
+
 
         }
     }

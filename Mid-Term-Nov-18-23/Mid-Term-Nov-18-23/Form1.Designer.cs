@@ -48,7 +48,9 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.SearchLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CountOfRecordsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -234,12 +236,30 @@
             this.SearchLabel.Text = "Search";
             this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // textBox1
+            // SearchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(461, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 22);
-            this.textBox1.TabIndex = 3;
+            this.SearchTextBox.Location = new System.Drawing.Point(461, 25);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(226, 22);
+            this.SearchTextBox.TabIndex = 3;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 76);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Contacts :";
+            // 
+            // CountOfRecordsLabel
+            // 
+            this.CountOfRecordsLabel.AutoSize = true;
+            this.CountOfRecordsLabel.Location = new System.Drawing.Point(112, 76);
+            this.CountOfRecordsLabel.Name = "CountOfRecordsLabel";
+            this.CountOfRecordsLabel.Size = new System.Drawing.Size(0, 16);
+            this.CountOfRecordsLabel.TabIndex = 7;
             // 
             // MainForm
             // 
@@ -247,6 +267,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1262, 604);
+            this.Controls.Add(this.CountOfRecordsLabel);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.DeleteButton);
@@ -257,7 +279,7 @@
             this.Controls.Add(this.ContactNoTextBox);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.FirstNameTextBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.ContactIdTextBox);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.label5);
@@ -297,7 +319,9 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Label SearchLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label CountOfRecordsLabel;
     }
 }
 

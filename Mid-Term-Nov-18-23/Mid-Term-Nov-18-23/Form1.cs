@@ -134,7 +134,7 @@ namespace Mid_Term_Nov_18_23
                 clear();
                 dataGridView.DataSource = ContactClass.Select();
 
-                CountOfRecordsLabel.Text = Convert.ToString(ContactClass.Procedure());
+                CountOfRecordsLabel.Text = Convert.ToString(contactClass.Procedure());
 
             }
             else
@@ -146,13 +146,13 @@ namespace Mid_Term_Nov_18_23
         }
 
         
-        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        private  void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string SerachText = SearchTextBox.Text;
 
             
 
-            dataGridView.DataSource = ContactClass.SelectForSearch(SerachText);
+            dataGridView.DataSource =  ContactClass.SelectForSearch(SerachText);
 
 
 

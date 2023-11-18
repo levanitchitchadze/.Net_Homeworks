@@ -178,7 +178,7 @@ namespace Mid_Term_Nov_18_23.contactClasses
         }
 
 
-        public int Procedure ()
+        public static  int Procedure()
         {
 
             SqlConnection con = new SqlConnection(myconnstring);
@@ -209,7 +209,7 @@ namespace Mid_Term_Nov_18_23.contactClasses
              
         }
 
-        public DataTable SelectForSearch(string  ContactId) 
+        public  DataTable SelectForSearch(string  ContactId) 
         {
             SqlConnection con = new SqlConnection(myconnstring);
             DataTable dt = new DataTable();

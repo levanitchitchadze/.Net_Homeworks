@@ -1,0 +1,10 @@
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\bin\Debug\WordsGameByLevanTchitchadze.exe.config
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\bin\Debug\WordsGameByLevanTchitchadze.exe
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\bin\Debug\WordsGameByLevanTchitchadze.pdb
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.csproj.AssemblyReference.cache
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.GamePlatform.resources
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.Properties.Resources.resources
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.csproj.GenerateResource.cache
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.csproj.CoreCompileInputs.cache
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.exe
+C:\Users\lab322_student11\Desktop\New folder\WordsGameByLevanTchitchadze\obj\Debug\WordsGameByLevanTchitchadze.pdb

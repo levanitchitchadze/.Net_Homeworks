@@ -1,0 +1,17 @@
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\HomeWork6.exe.config
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\HomeWork6.exe
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\HomeWork6.pdb
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\EntityFramework.dll
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\EntityFramework.xml
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.csproj.AssemblyReference.cache
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.Properties.Resources.resources
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.csproj.GenerateResource.cache
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.csproj.CopyComplete
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.exe
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.pdb
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.Registration.resources
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.LogIn.resources
+C:\Users\lenovo\source\repos\HomeWork6\HomeWork6\obj\Debug\HomeWork6.MainPage.resources

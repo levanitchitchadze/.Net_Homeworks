@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MetroFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,11 +24,41 @@ namespace Quiz2_ModelFirst
             InitializeComponent();
 
 
-            GenerateElements();
+            //GenerateElements();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer()
+            {
+                FirstName= FirstNameTB.Text,
+                LastName= LastNameTB.Text,
+                City= CityTB.Text,
+                Country= CountryTB.Text,
+                Phone= PhoneTB.Text,
+            };
+
+
+            try
+            {
+
+                using (var context = new Model1Container())
+                {
+                    context.Customers.Add(customer);
+                    context.SaveChanges();
+
+                }
+
+                this.Close();
+            }
+            catch (Exception ecxeption)
+            {
+                //MetroMessageBox.Show(1,"Cant create new Record");
+            }
         }
 
 
-        public void GenerateElements()
+        /*public void GenerateElements()
         {
             switch (targetTable)
             {
@@ -57,6 +89,6 @@ namespace Quiz2_ModelFirst
 
 
             return textBoxObjects;
-        }
+        }*/
     }
 }

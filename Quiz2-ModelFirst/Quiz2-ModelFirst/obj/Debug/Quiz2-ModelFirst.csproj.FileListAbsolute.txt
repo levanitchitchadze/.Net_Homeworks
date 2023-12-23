@@ -16,3 +16,4 @@ C:\Users\lenovo\source\repos\Quiz2-ModelFirst\Quiz2-ModelFirst\obj\Debug\Quiz2-M
 C:\Users\lenovo\source\repos\Quiz2-ModelFirst\Quiz2-ModelFirst\obj\Debug\Quiz2-ModelFirst.csproj.CopyComplete
 C:\Users\lenovo\source\repos\Quiz2-ModelFirst\Quiz2-ModelFirst\obj\Debug\Quiz2-ModelFirst.exe
 C:\Users\lenovo\source\repos\Quiz2-ModelFirst\Quiz2-ModelFirst\obj\Debug\Quiz2-ModelFirst.pdb
+C:\Users\lenovo\source\repos\Quiz2-ModelFirst\Quiz2-ModelFirst\obj\Debug\Quiz2_ModelFirst.CreateForm.resources

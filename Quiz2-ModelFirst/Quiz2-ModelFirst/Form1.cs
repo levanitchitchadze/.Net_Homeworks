@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -96,22 +97,48 @@ namespace Quiz2_ModelFirst
 
         private void AddRecordB_Click(object sender, EventArgs e)
         {
-            
-
-            
 
 
-            switch(AddRecordB.Text)
-            {
-                case "Add Customer": createForm = new CreateForm("Customer"); break;
-                case "Add Product": createForm = new CreateForm("Product"); break;
-                case "Add Order": createForm = new CreateForm("Order"); break;
-            }
+
+            createForm = new CreateForm(AddRecordB.Text);
+
+            createForm.Show();
+
+            loadDataFromModel(PageName.Text);
         }
 
         private void DeleteRecordB_Click(object sender, EventArgs e)
         {
 
+            int deletedRow=Convert.ToInt32(ShowDataGrid.SelectedRows[0].Cells[0].Value);
+            Console.WriteLine(deletedRow);
+            if (deletedRow != 0)
+            {
+                using(var context =new Model1Container())
+                {
+                    switch (DeleteRecordB.Text)
+                    {
+                        case "Delete Order":
+                            
+                            context.Orders.Remove(context.Orders.SingleOrDefault(x => x.Id == deletedRow));
+                            context.SaveChanges();
+                            break;
+
+                        case "Delete Product":
+                             
+                            context.Products.Remove(context.Products.SingleOrDefault(x => x.Id == deletedRow));
+                            context.SaveChanges();
+                            break;
+
+                        case "Delete Customer":
+                             
+                            context.Customers.Remove(context.Customers.SingleOrDefault(x => x.Id == deletedRow));
+                            context.SaveChanges();
+                            break;
+                    }
+                    
+                }
+            }
         }
     }
 }

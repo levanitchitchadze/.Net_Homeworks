@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TCMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Interfaces">
+    <Key>
+      <PropertyRef Name="InterfaceType" />
+    </Key>
+    <Property Name="InterfaceType" Type="int" Nullable="false" />
+    <Property Name="InterfaceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BaseUrl" Type="text" />
+    <Property Name="Description" Type="text" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sections">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="int" Nullable="false" />
+    <Property Name="SuitId" Type="int" Nullable="false" />
+    <Property Name="SectionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SubSections">
+    <Key>
+      <PropertyRef Name="SubSectionId" />
+    </Key>
+    <Property Name="SubSectionId" Type="int" Nullable="false" />
+    <Property Name="ParentSectionId" Type="nchar" MaxLength="10" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="SubSectionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suits">
+    <Key>
+      <PropertyRef Name="SuitId" />
+    </Key>
+    <Property Name="SuitId" Type="int" Nullable="false" />
+    <Property Name="SuitName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InterfaceType" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TestCases">
+    <Key>
+      <PropertyRef Name="CaseId" />
+    </Key>
+    <Property Name="CaseId" Type="int" Nullable="false" />
+    <Property Name="Scenario" Type="text" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="SuitId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Interfaces_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="0..1" />
+    <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="Interfaces">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sections_Suits">
+    <End Role="Suits" Type="Self.Suits" Multiplicity="1" />
+    <End Role="Sections" Type="Self.Sections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suits">
+        <PropertyRef Name="SuitId" />
+      </Principal>
+      <Dependent Role="Sections">
+        <PropertyRef Name="SuitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSections_Sections">
+    <End Role="Sections" Type="Self.Sections" Multiplicity="0..1" />
+    <End Role="SubSections" Type="Self.SubSections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sections">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="SubSections">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suits_Interfaces">
+    <End Role="Interfaces" Type="Self.Interfaces" Multiplicity="1" />
+    <End Role="Suits" Type="Self.Suits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Interfaces">
+        <PropertyRef Name="InterfaceType" />
+      </Principal>
+      <Dependent Role="Suits">
+        <PropertyRef Name="InterfaceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCases_Sections">
+    <End Role="Sections" Type="Self.Sections" Multiplicity="0..1" />
+    <End Role="TestCases" Type="Self.TestCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sections">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="TestCases">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TestCases_Suits">
+    <End Role="Suits" Type="Self.Suits" Multiplicity="1" />
+    <End Role="TestCases" Type="Self.TestCases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suits">
+        <PropertyRef Name="SuitId" />
+      </Principal>
+      <Dependent Role="TestCases">
+        <PropertyRef Name="SuitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="TCMSModelStoreContainer">
+    <EntitySet Name="Interfaces" EntityType="Self.Interfaces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sections" EntityType="Self.Sections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubSections" EntityType="Self.SubSections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suits" EntityType="Self.Suits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestCases" EntityType="Self.TestCases" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Interfaces_Projects" Association="Self.FK_Interfaces_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Interfaces" EntitySet="Interfaces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sections_Suits" Association="Self.FK_Sections_Suits">
+      <End Role="Suits" EntitySet="Suits" />
+      <End Role="Sections" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSections_Sections" Association="Self.FK_SubSections_Sections">
+      <End Role="Sections" EntitySet="Sections" />
+      <End Role="SubSections" EntitySet="SubSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suits_Interfaces" Association="Self.FK_Suits_Interfaces">
+      <End Role="Interfaces" EntitySet="Interfaces" />
+      <End Role="Suits" EntitySet="Suits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCases_Sections" Association="Self.FK_TestCases_Sections">
+      <End Role="Sections" EntitySet="Sections" />
+      <End Role="TestCases" EntitySet="TestCases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TestCases_Suits" Association="Self.FK_TestCases_Suits">
+      <End Role="Suits" EntitySet="Suits" />
+      <End Role="TestCases" EntitySet="TestCases" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

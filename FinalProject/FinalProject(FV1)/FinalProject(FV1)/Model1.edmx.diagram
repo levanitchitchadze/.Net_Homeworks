@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="de02462379794af783f7712683d822d0" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="TCMSModel.Action" Width="1.5" PointX="18.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.CasesToStep" Width="1.5" PointX="15" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.CasesToValidation" Width="1.5" PointX="18" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Interface" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Project" Width="1.75" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Section" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.StepParameter" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Step" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.StepsToStepParameter" Width="1.5" PointX="18" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.SubSection" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Suit" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.TestCas" Width="1.5" PointX="12.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.ToAction" Width="1.5" PointX="21" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.UserRole" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.ValidationParameter" Width="1.5" PointX="15.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.Validation" Width="1.5" PointX="15.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.ValidationsToValidationParameter" Width="1.5" PointX="18" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TCMSModel.CasesToRole" Width="1.5" PointX="15" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="TCMSModel.FK_ToAction_Actions" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToSteps_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToSteps_TestCases" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToValidations_TestCases" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToValidations_Validations" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_Interfaces_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_Suits_Interfaces" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_UserRoles_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_Sections_Suits" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_SubSections_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_TestCases_Sections" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_StepsToStepParameters_StepParameters" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_StepsToStepParameters_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_ToAction_Steps" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_TestCases_Suits" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToRoles_TestCases" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_ToAction_Validations" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_CasesToRoles_UserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_ValidationsToValidationParameters_ValidationParameters" ManuallyRouted="false" />
+        <AssociationConnector Association="TCMSModel.FK_ValidationsToValidationParameters_Validations" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
